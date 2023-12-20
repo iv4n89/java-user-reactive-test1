@@ -1,4 +1,4 @@
-# Project README
+# User reactive service
 
 ## Table of Contents
 1. [Hexagonal Architecture](#hexagonal-architecture)

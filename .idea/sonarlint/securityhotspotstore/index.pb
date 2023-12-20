@@ -59,3 +59,5 @@ puser-infrastructure/src/main/java/com/ddd/user/infrastructure/adapters/output/r
 Puser-application/src/main/java/com/ddd/user/application/dto/UserResponseDto.java,5/3/5311081c91227d4f8cb2349733c9dae23f262290
 †
 Vuser-application/src/main/java/com/ddd/user/application/dto/UserFinderResponseDto.java,3/0/303ce05c5d29baa0a0685ff1baeaa782302c9e6a
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
