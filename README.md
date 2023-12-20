@@ -6,6 +6,7 @@
 3. [Design Patterns](#design-patterns)
 4. [Endpoints](#endpoints)
 5. [Reactive Programming](#reactive-programming)
+6. [TODO](#todo)
 
 ## Hexagonal Architecture
 This project uses a Hexagonal Architecture (also known as Ports and Adapters) which consists of three layers:
@@ -39,3 +40,9 @@ The project exposes several RESTful endpoints for managing users:
 
 ## Reactive Programming
 The project uses Spring WebFlux for reactive programming. This allows it to handle a large number of concurrent requests efficiently, without blocking I/O operations. The endpoints return `Mono` or `Flux` instances, which represent asynchronous sequences of zero or more items.
+
+## TODO
+
+- [ ] Add unit tests
+- [ ] Add integration tests
+- [ ] Add password encoder without using Spring Security dependency
