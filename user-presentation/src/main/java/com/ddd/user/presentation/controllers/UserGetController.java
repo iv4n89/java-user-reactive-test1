@@ -1,6 +1,7 @@
 package com.ddd.user.presentation.controllers;
 
 import com.ddd.user.application.dto.UserResponseDto;
+import com.ddd.user.domain.model.UserModel;
 import com.ddd.user.domain.ports.input.service.UserApplicationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +21,13 @@ public class UserGetController {
     @GetMapping("/username/{username}")
     public Mono<ResponseEntity<UserResponseDto>> getByUsername(@PathVariable String username) {
         return Mono.just(userApplicationService.findUser(username))
-                .map(u -> UserResponseDto.builder().id(u.getId().value().toString()).name(u.getName().value()).username(u.getUsername().value()).email(u.getEmail().value()).build())
+                .map(user -> UserResponseDto.builder()
+                        .id(user.getId().value().toString())
+                        .name(user.getName().value())
+                        .username(user.getUsername().value())
+                        .email(user.getEmail().value())
+                        .password(user.getPassword().value())
+                        .build())
                 .map(ResponseEntity::ok)
                 .onErrorResume(error -> Mono.just(ResponseEntity.notFound().build()));
     }
@@ -28,7 +35,13 @@ public class UserGetController {
     @GetMapping("/email/{email}")
     public Mono<ResponseEntity<UserResponseDto>> getByEmail(@PathVariable String email) {
         return Mono.just(userApplicationService.findUserByEmail(email))
-                .map(u -> UserResponseDto.builder().id(u.getId().value().toString()).name(u.getName().value()).username(u.getUsername().value()).email(u.getEmail().value()).build())
+                .map(user -> UserResponseDto.builder()
+                        .id(user.getId().value().toString())
+                        .name(user.getName().value())
+                        .username(user.getUsername().value())
+                        .email(user.getEmail().value())
+                        .password(user.getPassword().value())
+                        .build())
                 .map(ResponseEntity::ok)
                 .onErrorResume(error -> Mono.just(ResponseEntity.notFound().build()));
     }
