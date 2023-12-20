@@ -11,4 +11,31 @@
 
     <artifactId>user-infrastructure</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.ddd</groupId>
+            <artifactId>products-shared</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ddd</groupId>
+            <artifactId>user-domain</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ddd</groupId>
+            <artifactId>user-application</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>

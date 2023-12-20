@@ -52,6 +52,12 @@
                 <artifactId>products-shared</artifactId>
                 <version>${project.version}</version>
                 <type>test-jar</type>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.yaml</groupId>
+                        <artifactId>snakeyaml</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>com.ddd</groupId>

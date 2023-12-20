@@ -11,4 +11,30 @@
 
     <artifactId>user-presentation</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.ddd</groupId>
+            <artifactId>products-shared</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ddd</groupId>
+            <artifactId>user-domain</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ddd</groupId>
+            <artifactId>user-application</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ddd</groupId>
+            <artifactId>user-infrastructure</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>

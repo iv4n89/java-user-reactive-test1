@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: user-service
+  jpa:
+    open-in-view: false
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=user_service&binaryTransfer=true&reWriteBatchedInserts=true&stringtype=unspecified
+    username: postgres
+    password: admin
+    driver-class-name: org.postgresql.Driver
+  sql:
+    init:
+      platform: postgres
+      mode: ALWAYS
+      schema-locations: classpath:init-schema.sql
+
+server:
+  port: 8082
+
+kafka-config:
+  bootstrap-servers: localhost:19092, localhost:29092
+  num-of-partitions: 3
+  replication-factor: 3
+
+kafka-producer-config:
+  key-serialization-class: org.apache.kafka.common.serialization.StringSerializer
+  value-serialization-class: org.springframework.kafka.support.serializer.JsonSerializer
+  request-timeout-ms: 60000
+  retry-count: 5
+
+kafka-consumer-config:
+  key-deserialization-class: org.apache.kafka.common.serialization.StringDeserializer
+  value-deserialization-class: org.springframework.kafka.support.serializer.JsonDeserializer
+  session-timeout-ms: 10000
+  heartbeat-interval-ms: 3000

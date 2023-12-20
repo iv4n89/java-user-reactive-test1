@@ -14,8 +14,8 @@ public class UserUsername extends StringValueObject {
     }
 
     private void isValidUsername() {
-        if (this.value.length() < 8) {
-            throw new IllegalArgumentException("Username must be at least 8 characters");
+        if (this.value.length() < 3) {
+            throw new IllegalArgumentException("Username must be at least 3 characters");
         }
     }
 }
